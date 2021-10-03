@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HasanS HouseS</title>
+  <link rel="stylesheet" href="..\static\style2.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+
+
+<body>
+  <nav class="navbar " id=baslik>
+    <h1 class="display-3 m-4"><i class="fas fa-home"></i> HasanS HouseS</h1>
+    <div id="menuler">
+      <ul>
+        {% if current_user.is_authenticated %}
+        <li><a href="{{url_for('logout')}}">Logout</a></li>
+        {% else %}
+        <li><a href="login">Login</a></li>
+        {% endif %}
+        <li><a href="#">Info</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="register">Register</a></li>
+
+        <li><a href="index">Home</a></li>
+
+      </ul>
+    </div>
+
+    <br>
+
+  </nav>
+  <div id="middle_part">
+    <form id="calculate_form" method="POST">
+      <div id="input_first" class="row bg-dark" style="height: 40px;">
+        <div class="box bg-dark col-2">
+          <div class="form-group">
+            <label for="inputCity">sqft_living</label>
+            <input type="text" class="form-control" name="sqft_living">
+          </div>
+        </div>
+        <div class="box bg-dark col-2">
+          <div class="form-group">
+            <label for="inputCity">sqft_lot</label>
+            <input type="text" class="form-control" name="sqft_lot">
+          </div>
+        </div>
+        <div class="box bg-dark col-2">
+          <div class="form-group">
+            <label for="inputCity">sqft_above</label>
+            <input type="text" class="form-control" name="sqft_above">
+          </div>
+        </div>
+        <div class="box bg-dark col-2">
+          <div class="form-group">
+            <label for="inputCity">sqft_basement</label>
+            <input type="text" class="form-control" name="sqft_basement">
+          </div>
+        </div>
+        <div class="box bg-dark col-2">
+          <div class="form-group">
+            <label for="inputCity">years_old</label>
+            <input type="text" class="form-control" name="years_old">
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div id="input_second" class="row bg-dark" style="height: 40px;">
+        <div class="box bg-dark col-2">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Bedroom</label>
+            <select class="form-control" name="bedrooms">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+            </select>
+          </div>
+        </div>
+        <div class="box bg-dark col-2">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Bathrooms</label>
+            <select class="form-control" name="bathrooms">
+              <option>0.0</option>
+              <option>0.75</option>
+              <option>1.0</option>
+              <option>1.25</option>
+              <option>1.5</option>
+              <option>1.75</option>
+              <option>2.0</option>
+              <option>2.25</option>
+              <option>2.5</option>
+              <option>2.75</option>
+              <option>3.0</option>
+              <option>3.25</option>
+              <option>3.5</option>
+              <option>3.75</option>
+              <option>4.0</option>
+              <option>4.25</option>
+              <option>4.5</option>
+              <option>4.75</option>
+              <option>5.0</option>
+              <option>5.25</option>
+              <option>5.5</option>
+              <option>5.75</option>
+              <option>6.25</option>
+              <option>6.5</option>
+              <option>6.75</option>
+              <option>8.0</option>
+            </select>
+          </div>
+        </div>
+        <div class="box bg-dark col-2">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">City</label>
+            <select class="form-control" name="city">
+              <option>Algona</option>
+              <option>Auburn</option>
+              <option>Beaux Arts Village</option>
+              <option>Bellevue</option>
+              <option>Black Diamond</option>
+              <option>Bothell</option>
+              <option>Burien</option>
+              <option>Carnation</option>
+              <option>Clyde Hill</option>
+              <option>Covington</option>
+              <option>Des Moines</option>
+              <option>Duvall</option>
+              <option>Enumclaw</option>
+              <option>Fall City</option>
+              <option>Federal Way</option>
+              <option>Inglewood-Finn Hill</option>
+              <option>Issaquah</option>
+              <option>Kenmore</option>
+              <option>Kent</option>
+              <option>Kirkland</option>
+              <option>Lake Forest Park</option>
+              <option>Maple Valley</option>
+              <option>Medina</option>
+              <option>Mercer Island</option>
+              <option>Milton</option>
+              <option>Newcastle</option>
+              <option>Normandy Park</option>
+              <option>North Bend</option>
+              <option>Pacific</option>
+              <option>Preston</option>
+              <option>Ravensdale</option>
+              <option>Redmond</option>
+              <option>Renton</option>
+              <option>Sammamish</option>
+              <option>SeaTac</option>
+              <option>Seattle</option>
+              <option>Shoreline</option>
+              <option>Skykomish</option>
+              <option>Snoqualmie</option>
+              <option>Snoqualmie Pass</option>
+              <option>Tukwila</option>
+              <option>Vashon</option>
+              <option>Woodinville</option>
+              <option>Yarrow Point</option>
+            </select>
+          </div>
+        </div>
+        <div class="box bg-dark col-2">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Floors</label>
+            <select class="form-control" name="floors">
+              <option>1.0</option>
+              <option>1.5</option>
+              <option>2.0</option>
+              <option>2.5</option>
+              <option>3.0</option>
+              <option>3.5</option>
+            </select>
+          </div>
+        </div>
+        <div class="box bg-dark col-2">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Condition</label>
+            <select class="form-control" name="condition">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+      <br>
+
+      <button type="submit" class="btn btn-primary m-2" name="buton">calculate </button>
+
+    </form>
+
+
+    <div>
+
+      {%if result_up and result_down %}
+
+      <table id="result_table">
+        <tr>
+          <th colspan="2">
+            <h3 style="color: rgb(25, 43, 21);">Results</h2>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <h5>Estimated Price Range</h5>
+          </td>
+          <td>
+            <h5>{{result_down}} - {{result_up}} $</h5>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><a href="calculate">New Calculation</a></td>
+        </tr>
+      </table>
+
+      {%endif%}
+
+    </div>
+  </div>
+
+
+  <nav class="navbar fixed-bottom" id="footer_part">
+    <div class="container-fluid">
+      <p class="text-right">All rights reserved</p>
+    </div>
+  </nav>
+
+
+</body>
+
+</html>

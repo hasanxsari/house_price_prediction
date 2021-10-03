@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="..\static\style2.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  <title>Register</title>
+</head>
+<style>
+  table {
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+
+  }
+</style>
+
+<body>
+  <nav class="navbar " id=baslik>
+    <h1 class="display-3 m-4"><i class="fas fa-home"></i> HasanS HouseS</h1>
+    <div id="menuler">
+      <ul>
+        {% if current_user.is_authenticated %}
+        <li><a href="{{url_for('logout')}}">Logout</a></li>
+        {% else %}
+        <li><a href="login">Login</a></li>
+        {% endif %}
+        <li><a href="#">Info</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="register">Register</a></li>
+        <li><a href="index">Home</a></li>
+      </ul>
+    </div>
+
+    <br>
+
+  </nav>
+
+  <form method="POST">
+    <table border="2" class="register_table">
+      <tbody class="register_tbody">
+
+        <tr>
+          <td>Username</td>
+          <td><input type="text" class="form-control" name="username"></td>
+        </tr>
+        <tr>
+          <td>E-mail</td>
+          <td><input type="email" class="form-control" name="email"></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="password" class="form-control" name="password"></td>
+        </tr>
+
+        <tr>
+
+          <td colspan="2" style="text-align: center;"><button type="submit" class="btn btn-primary"
+              name="buton">register</button></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;  "><i>Do you have account ? <br> <a href="login"
+                style="color: white;">Login</a> </i> </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </form>
+  <nav class="navbar fixed-bottom" id="footer_part">
+    <div class="container-fluid">
+      <p class="text-right">All rights reserved</p>
+    </div>
+  </nav>
+
+
+
+</body>
+
+</html>
